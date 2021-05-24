@@ -1,7 +1,7 @@
 :root {
   --accent-color: #2196f3;
   --top-line-logo-color: #000000;
-  --dark-background-color: #2f303a;
+  --footer-color: #2f303a;
   --title-color: #212121;
   --light-background-color: #f5f4fa;
   --footer-contact-color: rgba(255, 255, 255, 0.6);
@@ -10,6 +10,8 @@
   --text-color: #757575;
   --top-line-border-color: #ececec;
   --project-list-border-color: #eeeeee;
+  --hero-background-color: #c4c4c4;
+  --link-color: #afb1b8;
 }
 
 h1,
@@ -77,6 +79,38 @@ body {
   color: var(--title-color);
   margin-bottom: 50px;
 }
+
+.social-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.social-list-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  background-color: transparent;
+  border-radius: 50%;
+}
+
+.social-list-link:hover,
+.social-list-link:focus {
+  background-color: var(--accent-color);
+  border-radius: 50%;
+}
+
+.social-list-icon {
+  width: 20px;
+  height: 20px;
+  fill: var(--link-color);
+}
+
+.social-list-link:hover .social-list-icon,
+.social-list-link:focus .social-list-icon {
+  fill: var(--text-on-dark-color);
+}
 /*======= END COMPONENTS =======*/
 
 /*======= TOP LINE =======*/
@@ -91,21 +125,24 @@ body {
   align-items: center;
 }
 
-.navigation-list {
-  display: flex;
-}
-
-.contact-list {
-  display: flex;
-  margin-left: auto;
-}
-
 .logo-link {
   margin-right: 92px;
 }
 
 .top-line-logo {
   color: var(--top-line-logo-color);
+}
+
+.navigation-list {
+  display: flex;
+}
+
+.navigation-list .current {
+  color: var(--accent-color);
+}
+
+.navigation-list-item:not(:last-child) {
+  margin-right: 50px;
 }
 
 .navigation-list-link {
@@ -121,15 +158,18 @@ body {
   color: var(--accent-color);
 }
 
-.navigation-list .current {
-  color: var(--accent-color);
+.contact-list {
+  display: flex;
+  margin-left: auto;
 }
 
-.navigation-list-item:not(:last-child) {
-  margin-right: 50px;
+.contact-item:not(:last-child) {
+  margin-right: 30px;
 }
 
 .contact-link {
+  display: flex;
+  align-items: center;
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
@@ -142,18 +182,23 @@ body {
   color: var(--accent-color);
 }
 
-.contact-item:not(:last-child) {
-  margin-right: 50px;
+.contact-link-icon {
+  fill: currentColor;
+  margin-right: 10px;
 }
 /*======= END TOP LINE =======*/
 
 /*======= HERO =======*/
 .hero {
-  background-color: var(--dark-background-color);
+  max-width: 1600px;
+  background-color: var(--hero-background-color);
   padding-top: 200px;
   padding-bottom: 200px;
-  margin-bottom: 94px;
   text-align: center;
+  background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    url(../images/hero.jpg);
+  background-size: cover;
+  margin: 0 auto;
 }
 .hero-title {
   font-weight: 900;
@@ -188,8 +233,8 @@ body {
 /*======= END HERO =======*/
 
 /*======= FEATURES =======*/
-
 .features {
+  margin-top: 94px;
   margin-bottom: 94px;
 }
 
@@ -204,6 +249,22 @@ body {
 
 .features-item:not(:last-child) {
   margin-right: 30px;
+}
+
+.features-box-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 270px;
+  height: 120px;
+  background-color: var(--light-background-color);
+  border-radius: 4px;
+  margin-bottom: 30px;
+}
+
+.features-icon {
+  width: 70px;
+  height: 70px;
 }
 
 .features-subtitle {
@@ -243,6 +304,7 @@ body {
 /*======= TEAM =======*/
 .team {
   background-color: var(--light-background-color);
+  margin-bottom: 94px;
 }
 
 .team-list {
@@ -256,10 +318,6 @@ body {
   margin-top: -30px;
 }
 
-.team-list-content {
-  padding-top: 30px;
-}
-
 .team-list-item {
   margin-left: 30px;
   margin-top: 30px;
@@ -270,6 +328,13 @@ body {
   border-radius: 0px 0px 4px 4px;
 }
 
+.team-list-content {
+  padding-top: 30px;
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-bottom: 30px;
+}
+
 .team-name {
   font-weight: 500;
   color: var(--title-color);
@@ -277,15 +342,62 @@ body {
 }
 
 .team-position {
-  padding-bottom: 30px;
+  margin-bottom: 16px;
 }
 /*======= END TEAM =======*/
 
+/*======= CLIENTS =======*/
+.clients {
+  margin-bottom: 94px;
+}
+
+.clients-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.clients-list-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 170px;
+  height: 92px;
+  background-color: transparent;
+  border: 1px solid var(--link-color);
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+.clients-list-link:hover,
+.clients-list-link:focus {
+  border: 1px solid var(--accent-color);
+}
+
+.clients-list-icon {
+  fill: var(--link-color);
+}
+
+.clients-list-link:hover .clients-list-icon,
+.clients-list-link:focus .clients-list-icon {
+  fill: var(--accent-color);
+}
+
+/*======= END CLIENTS =======*/
+
 /*======= FOOTER =======*/
 .footer {
-  background-color: var(--dark-background-color);
+  background-color: var(--footer-color);
   padding-top: 60px;
   padding-bottom: 60px;
+}
+
+.footer-container {
+  display: flex;
+  align-items: baseline;
+}
+
+.footer-left-side {
+  margin-right: 70px;
 }
 
 .footer-logo {
@@ -311,6 +423,32 @@ body {
 .adress-list .link:focus {
   color: var(--accent-color);
 }
+
+.footer-subtitle {
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--text-on-dark-color);
+  margin-bottom: 20px;
+}
+
+.footer-social-list-link {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.social-list-link:hover,
+.social-list-link:focus {
+  background-color: var(--accent-color);
+}
+
+.footer-social-list-icon {
+  fill: var(--text-on-dark-color);
+}
+.social-list-item:not(:last-child) {
+  margin-right: 10px;
+}
+
 /*======= END FOOTER =======*/
 
 /* ======= PORTFOLIO ======= */
@@ -361,6 +499,12 @@ body {
   flex-basis: calc((100% - 90px) / 3);
 }
 
+.project-list-item:hover,
+.project-list-item:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
 .project-list-content {
   padding: 15px 24px 20px 24px;
   border: 1px solid var(--project-list-border-color);
@@ -373,6 +517,7 @@ body {
   color: var(--title-color);
   margin-bottom: 4px;
 }
+
 .project-type {
   font-size: 16px;
   line-height: 1.87;
