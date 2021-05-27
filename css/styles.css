@@ -233,22 +233,14 @@ body {
 /*======= END HERO =======*/
 
 /*======= FEATURES =======*/
-.features {
-  margin-top: 94px;
-  margin-bottom: 94px;
-}
-
 .features-list {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .features-item {
   width: 270px;
-}
-
-.features-item:not(:last-child) {
-  margin-right: 30px;
 }
 
 .features-box-icon {
@@ -285,7 +277,7 @@ body {
 
 /*======= DOING =======*/
 .doing {
-  margin-bottom: 94px;
+  padding-bottom: 94px;
 }
 
 .doing-img-list {
@@ -304,7 +296,6 @@ body {
 /*======= TEAM =======*/
 .team {
   background-color: var(--light-background-color);
-  margin-bottom: 94px;
 }
 
 .team-list {
@@ -347,10 +338,6 @@ body {
 /*======= END TEAM =======*/
 
 /*======= CLIENTS =======*/
-.clients {
-  margin-bottom: 94px;
-}
-
 .clients-list {
   display: flex;
   justify-content: space-between;
@@ -465,7 +452,10 @@ body {
   text-align: center;
   letter-spacing: 0.03em;
   color: var(--title-color);
-  margin-left: 8px;
+}
+
+.filter-list-item:not(:last-child) {
+  margin-right: 8px;
 }
 
 .filter-btn {
